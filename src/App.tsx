@@ -1,35 +1,26 @@
-import { AddTransaction } from './components/AddTransaction';
+import { TransactionForm } from './components/TransactionForm';
 import { TransactionList } from './components/TransactionList';
-import { ExpenseChart } from './components/ExpenseChart';
-import { BudgetProgress } from './components/BudgetProgress';
+import { ExpenseSummary } from './components/ExpenseSummary';
 
-export default function App() {
+function App() {
   return (
     <div className="min-h-screen bg-gray-50">
-      <div className="mx-auto max-w-7xl px-4 py-8">
-        <div className="grid gap-6 md:grid-cols-2">
+      <div className="max-w-4xl mx-auto p-4 py-8">
+        <h1 className="text-3xl font-bold text-gray-900 mb-8">Expense Tracker</h1>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="space-y-6">
-            <div className="rounded-lg bg-white p-6 shadow-sm">
-              <h2 className="mb-4 text-lg font-semibold">Add New Transaction</h2>
-              <AddTransaction />
-            </div>
-            <div className="rounded-lg bg-white p-6 shadow-sm">
-              <h2 className="mb-4 text-lg font-semibold">Transactions</h2>
-              <TransactionList />
-            </div>
+            <TransactionForm />
+            <TransactionList />
           </div>
-          <div className="space-y-6">
-            <div className="rounded-lg bg-white p-6 shadow-sm">
-              <h2 className="mb-4 text-lg font-semibold">Expense Distribution</h2>
-              <ExpenseChart />
-            </div>
-            <div className="rounded-lg bg-white p-6 shadow-sm">
-              <h2 className="mb-4 text-lg font-semibold">Budget Progress</h2>
-              <BudgetProgress />
-            </div>
+          
+          <div>
+            <ExpenseSummary />
           </div>
         </div>
       </div>
     </div>
   );
 }
+
+export default App;
